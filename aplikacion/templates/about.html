@@ -1,0 +1,45 @@
+{% extends 'index.html' %}
+{% load static %}
+
+{% block content %}
+
+<!-- About -->
+<div class="container my-5" id="About">
+    <div class="row">
+        <div class="col-12 col-md-7">
+            <div id="carousel2" class="carousel slide carousel-fade">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="images/carousel2/img1.jpg" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="images/carousel2/img2.jpg" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="images/carousel2/img3.jpg" class="d-block w-100" alt="...">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carousel2" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carousel2" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+        <div class="col-12 col-md-5 p-5">
+            <h2 class="display-2 text-center">About Us</h2>
+            <p class="py-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam reiciendis, inventore ab
+                qui dolor optio possimus officiis velit quibusdam fugit repudiandae ipsam. Quod fuga magnam cum quis
+                ipsam saepe unde.</p>
+        </div>
+    </div>
+</div>
+<!-- fund about -->
+<a href="https://www.google.com/"
+    target="_blank">
+    <img src="https://media.istockphoto.com/id/2195607659/photo/ai-artificial-intelligence-technology-for-data-analysis-research-planning-and-work-generate.jpg?s=1024x1024&w=is&k=20&c=cgcWsJhe6Ee7E2zzusQOddrs90BH30CimCB1wozb-HQ="
+        width="568" height="500"> </a>
+{% endblock %}

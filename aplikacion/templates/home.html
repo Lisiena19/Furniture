@@ -1,0 +1,63 @@
+{% extends 'index.html' %}
+{% load static %}
+
+{% block content %}
+
+<!-- banner-->
+<!-- <div class="container-fluid"> -->
+<div id="carousel1" class="carousel slide carousel-fade">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="{% static 'images/carousel1/img1.jpg' %}" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+            <img src="{% static 'images/carousel1/img2.jpg' %}" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+            <img src="{% static 'images/carousel1/img3.jpg' %}" class="d-block w-100" alt="...">
+        </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carousel1" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carousel1" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+<!-- </div> -->
+<!-- fund banner -->
+<!-- Trending -->
+<div class="container my-5 pt-5">
+    <div class="my-5 text-center">
+        <h3 class="text-uppercase fw-light">trending now</h3>
+        <h2 class="fs-1">Best Selling Product</h2>
+    </div>
+    <div class="row">
+        {% for product in products %}
+        <div class="col-12 col-md-6 col-lg-3 mt-5">
+            <div class="card h-100 p-2 bg-light border-0">
+                <img src="{{product.product_image.url}}" class="card-img-top mt-3 img-fluid chair" alt="...">
+                <div class="card-body text-center">
+                    <h4 class="card-title fw-bolder mt-3">{{product.product_name}}</h4>
+                    <p class="card-text fw-bold mt-3 fs-3">${{product.product_price}}</p>
+                    <a href="product.html" class="btn btn-dark rounded-circle mt-3" aria-label="products"><i
+                            class="fas fa-chevron-right"></i></a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+
+
+
+        <!-- button -->
+        <div class="d-flex justify-content-center align-content-center my-5 pt-5">
+            <a href="products.html" class="btn bg-dark text-light py-2 px-4">Go to Products</a>
+        </div>
+        <!-- fund button -->
+    </div>
+</div>
+<!-- fund Trending -->
+
+{% endblock %}

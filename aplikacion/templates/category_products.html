@@ -1,0 +1,42 @@
+{% extends 'index.html' %}
+{% load static %}
+
+{% block content %}
+    <!-- banner-->
+    <div class="container-fluid position-relative p-0 banner-products  ">
+        <div class="cover">
+            <img src="{{categoryDetail.category_image.url}}" alt="" class="img-fluid">
+        </div>
+        <div class="info-cover position-absolute w-50 top-50 start-50 translate-middle text-center">
+            <h2 class="fw-light text-white fs-1 mb-5">Find the best  {{categoryDetail.category_name}}
+            </h2>
+            <h1 class="fs-1 text-white mb-5 pb-5">Buy now</h1>
+        </div>
+    </div>
+    <!-- fund banner -->
+    <!-- Category product -->
+    <div class="container my-5 pt-5">
+        <div class="my-5 text-center">
+            <h3 class="text-uppercase fw-light">trending now</h3>
+            <h2 class="fs-1">Best Chairs</h2>
+        </div>
+        <div class="row">
+            {% for product in categoryProducts %}
+            <div class="col-12 col-md-6 col-lg-3 mt-5">
+                <div class="card h-100 p-2 bg-light border-0">
+                    <img src="{{product.product_image.url}}" class="card-img-top mt-3 img-fluid chair" alt="...">
+                    <div class="card-body text-center">
+                        <h4 class="card-title fw-bolder mt-3">{{product.product_name}}</h4>
+                        <p class="card-text fw-bold mt-3 fs-3">{{product.product_price}}</p>
+                        <a href="product.html" class="btn btn-dark rounded-circle mt-3" aria-label="product"><i
+                                class="fas fa-chevron-right"></i></a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+
+
+        </div>
+    </div>
+    <!-- fund Category product -->
+{% endblock %}

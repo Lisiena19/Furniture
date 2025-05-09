@@ -1,0 +1,44 @@
+{% extends 'index.html' %}
+{% block content %}
+    <div class="container mb-5">
+
+        <div class="row mt-5">
+            <div class="col-12 col-md-6 bg-light">
+                <div class="alert alert-info m-5 mb-0" role="alert" id="alert">
+                    A simple info alert—check it out!
+                </div>
+                {% if messages %}
+                {% for messages in messages %}
+                <div class="mt-5 alert alert-{{message.tags}}{% if message.tags == 'error'%}
+                bg-danger-subtle text-emphasis-danger {% endif %}" role="alert" >
+                   {{ message }}
+                </div>
+                {% endfor %}
+                {% endif %}
+                <form class="p-5" id="contactForm" method="POST">
+                    {% csrf_token %}
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Name</label>
+                        <input type="text" class="form-control"  name = "Name" id="name" placeholder="Your Name">
+                    </div>
+                    <div class="mb-3">
+                        <label for="surname" class="form-label">Surname</label>
+                        <input type="text" class="form-control"  name = "firstName" id="surname" placeholder="Your surname">
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" class="form-control"  name = "Email" id="email" placeholder="name@example.com">
+                    </div>
+                    <div class="mb-3">
+                        <label for="comment" class="form-label">Comment</label>
+                        <textarea class="form-control" name = "secondName" id="comment" rows="3"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-dark text-light">Submit</button>
+                </form>
+            </div>
+            <div class="col-12 col-md-6">
+                <img src="images/pixeltrue-contact-me.png" class="img-fluid" alt="">
+            </div>
+        </div>
+    </div>
+{% endblock %}
