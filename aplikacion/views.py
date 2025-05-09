@@ -14,7 +14,7 @@ def home(request):
 def about(request):
     categories = Category.objects.all()
     context = {"categories":categories}
-    return render(request, "category_product.html", context)
+    return render(request, "about.html")
 
 
 def category_products(request, id):
@@ -30,12 +30,12 @@ def category_products(request, id):
 def contact(request):
     categories = Category.objects.all()
     if request.method == "POST":
-        infoFirstName = request.POST["firstName"]
-        infoLastName = request.POST["lastName"]
-        infoEmail = request.POST["email"]
-        infoComment = request.POST["comment"]
+        infoFirstName = request.POST["Name"]
+        infoLastName = request.POST["firstName"]
+        infoEmail = request.POST["Email"]
+        infoComment = request.POST["secondName"]
         if infoFirstName != "" and infoLastName != "" and InfoEmail !="" and infoComment != "" :
-            Contact (
+            Contact(
                 contact_firstName = infoFirstName,
                 contact_lastName = infoLastName,
                 contact_email = infoEmail,
@@ -44,7 +44,7 @@ def contact(request):
             messages.success(request, "Message send!")
         else:
             messages.error(request, "Message not send! Please fill the form.")
-    return render(request, "contact.html",context)
+    return render(request, "contact.html")
 
 
 def products(request):
